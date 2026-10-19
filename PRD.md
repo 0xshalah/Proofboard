@@ -204,12 +204,12 @@ Copy rules: sentence case, no exclamation marks, buttons name the action ("Check
 ## 10. Design direction
 
 ### Requirement
-The repository root carries `DESIGN.md` with identity, palette, typography, dials, and a one-line reason for each major decision. No UI code lands before that file exists; a design built without direction is a draft, not a deliverable. This section proposes the direction; DESIGN.md confirms or replaces it.
+The repository root carries `DESIGN.md` with identity, palette, typography, dials, and a one-line reason for each major decision. No UI code lands before that file exists; a design built without direction is a draft, not a deliverable. The direction is locked in `DESIGN.md`; this section records the summary, and DESIGN.md wins on any disagreement.
 
-### Proposed direction
+### Direction (locked in DESIGN.md)
 - **Personality:** a verification instrument. Precise, quiet, unhurried. The tool reports state; it does not celebrate.
-- **Palette:** warm paper background, ink text, one rust accent reserved for interactive elements. Red, amber, and green appear only as run status. Light default with a working dark toggle, both modes styled and tested the same way.
-- **Typography:** IBM Plex Sans for prose and IBM Plex Mono for run data (counts, PR numbers, timestamps, slugs). Reason: Plex has a technical documentation character, and its mono shares the sans skeleton, so numbers read as native to the page rather than decorative.
+- **Palette:** warm paper background, ink text, one navy accent reserved for interactive elements. Red, amber, and green appear only as run status. Light default with a working dark toggle, both modes styled and tested the same way. Verified hex values and contrast ratios live in `DESIGN.md`.
+- **Typography:** Newsreader for display headings, IBM Plex Sans for prose, and IBM Plex Mono for run data (counts, PR numbers, timestamps, slugs). Reason: the serif carries the record voice; Plex has a technical documentation character, and its mono shares the sans skeleton, so numbers read as native to the page rather than decorative.
 - **Identity motif:** the run strip. Small squares, one per run, red or green, with text labels. It appears on the board header, in each PR row, and inside the badge. The strip grows as the repository ships, so history is visible at a glance.
 - **Dial:** `Reading this as: a public verification board for developers and maintainers, in a quiet instrument-panel language, dial ENERGY 1 / RHYTHM 2 / MOTION 1.`
   - ENERGY 1: the page is scanned, not performed; calm serves scanning.
@@ -218,7 +218,7 @@ The repository root carries `DESIGN.md` with identity, palette, typography, dial
 - **Status chips:** a small square plus a text label. No glow, no capsule plus dot stack, no uppercase.
 - **Focal point:** the health strip on the board, the input on the landing page. One focal point per screen.
 - **Originality:** the direction must be specific to Proofboard and must not copy any product's look, including Linear, Vercel, Stripe, or shields.io. References inform technique only.
-- **Assets:** the logo is the wordmark set in Plex until a replacement mark is designed and approved. No icon, illustration, or social image ships without confirmation.
+- **Assets:** the logo is the wordmark set in the display face (Newsreader) until a replacement mark is designed and approved. No icon, illustration, or social image ships without confirmation.
 
 ## 11. Non-functional requirements
 
@@ -301,7 +301,6 @@ The suite is managed in the TestSprite portal and runs through the GitHub App. O
 ## 16. Open questions
 
 - Discord (posted, awaiting answer): payout route for Indonesia, and API-test support for the PR check.
-- Visual direction: confirm or redirect the proposal in section 10 before the first UI commit.
 - Name and slug: final product name and repository slug before public assets ship.
 - URL pattern: the final preview placeholder tokens and Vercel scope name (section 13).
 - Bot login: pin the TestSprite App login after the first real run posts.
