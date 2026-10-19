@@ -127,7 +127,7 @@ The landing page has one field for a public GitHub repository URL and one button
 
 ### Sources
 - `GET https://api.github.com/repos/{owner}/{repo}` for repository metadata.
-- `GET https://api.github.com/repos/{owner}/{repo}/pulls?state=all&per_page=20` for the pull request list.
+- `GET https://api.github.com/repos/{owner}/{repo}/pulls?state=all&sort=created&direction=desc&per_page=10` for the pull request list.
 - `GET https://api.github.com/repos/{owner}/{repo}/issues/{number}/comments` for the comments on each inspected pull request.
 
 All calls run server-side with a `User-Agent` header, plus an `Authorization` header when `GITHUB_TOKEN` is configured.
@@ -147,7 +147,7 @@ A comment counts as a TestSprite run when its author is the TestSprite GitHub Ap
 ```
 
 ### Tolerance rules
-- The parser never throws. Unknown text returns no runs; a recognizable comment with missing details returns a run with `status: "unknown"` and the raw text kept for display.
+- The parser never throws. Unrecognized text returns one run with `status: "unknown"` and the raw text kept for display; an empty body returns no runs.
 - Counts are parsed when present. Missing counts stay null, and the UI renders "not reported" instead of guessing.
 - New comment formats appear as the product evolves. Each new format gets a fixture and a test before the parser changes.
 

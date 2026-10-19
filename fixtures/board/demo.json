@@ -1,0 +1,107 @@
+{
+  "repo": {
+    "owner": "demo",
+    "name": "proofboard",
+    "url": "https://github.com/demo/proofboard",
+    "description": "Sample data for the Proofboard demo board."
+  },
+  "pullRequests": [
+    {
+      "number": 47,
+      "title": "Add webhook retry handling",
+      "state": "merged",
+      "url": "https://github.com/demo/proofboard/pull/47",
+      "runs": [
+        {
+          "status": "failed",
+          "passed": 11,
+          "failed": 3,
+          "createdAt": "2026-10-18T14:05:00Z",
+          "url": "https://github.com/demo/proofboard/pull/47#issuecomment-9001"
+        },
+        {
+          "status": "passed",
+          "passed": 14,
+          "failed": 0,
+          "createdAt": "2026-10-18T15:12:00Z",
+          "url": "https://github.com/demo/proofboard/pull/47#issuecomment-9002"
+        },
+        {
+          "status": "passed",
+          "passed": 14,
+          "failed": 0,
+          "createdAt": "2026-10-18T16:40:00Z",
+          "url": "https://github.com/demo/proofboard/pull/47#issuecomment-9003"
+        }
+      ]
+    },
+    {
+      "number": 46,
+      "title": "Fix flaky login test",
+      "state": "merged",
+      "url": "https://github.com/demo/proofboard/pull/46",
+      "runs": [
+        {
+          "status": "passed",
+          "passed": 9,
+          "failed": 0,
+          "createdAt": "2026-10-18T11:20:00Z",
+          "url": "https://github.com/demo/proofboard/pull/46#issuecomment-9004"
+        },
+        {
+          "status": "passed",
+          "passed": 9,
+          "failed": 0,
+          "createdAt": "2026-10-18T11:47:00Z",
+          "url": "https://github.com/demo/proofboard/pull/46#issuecomment-9005"
+        }
+      ]
+    },
+    {
+      "number": 45,
+      "title": "Refactor the settings page",
+      "state": "closed",
+      "url": "https://github.com/demo/proofboard/pull/45",
+      "runs": [
+        {
+          "status": "failed",
+          "passed": 7,
+          "failed": 2,
+          "createdAt": "2026-10-17T09:30:00Z",
+          "url": "https://github.com/demo/proofboard/pull/45#issuecomment-9006"
+        }
+      ]
+    },
+    {
+      "number": 44,
+      "title": "Add the rate limit banner",
+      "state": "merged",
+      "url": "https://github.com/demo/proofboard/pull/44",
+      "runs": [
+        {
+          "status": "unknown",
+          "passed": null,
+          "failed": null,
+          "createdAt": "2026-10-16T13:05:00Z",
+          "url": "https://github.com/demo/proofboard/pull/44#issuecomment-9007",
+          "raw": "Verification for this change is available in the TestSprite workspace. Open the run to see the details."
+        }
+      ]
+    },
+    {
+      "number": 43,
+      "title": "Set up the test pipeline",
+      "state": "open",
+      "url": "https://github.com/demo/proofboard/pull/43",
+      "runs": [
+        {
+          "status": "passed",
+          "passed": 5,
+          "failed": 0,
+          "createdAt": "2026-10-15T08:10:00Z",
+          "url": "https://github.com/demo/proofboard/pull/43#issuecomment-9008"
+        }
+      ]
+    }
+  ]
+}
