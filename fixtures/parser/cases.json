@@ -1,0 +1,57 @@
+{
+  "note": "Placeholder samples written before the first real run. Replace each one with the real body it stands for during calibration, and add a case for every new format before the parser changes. Each case feeds POST /api/parse; expect covers status, passed, and failed, while createdAt and url are pinned by the caller.",
+  "cases": [
+    {
+      "name": "passing run with counts",
+      "text": "TestSprite: all checks finished. 12 passed, 0 failed.",
+      "expect": [{ "status": "passed", "passed": 12, "failed": 0 }]
+    },
+    {
+      "name": "failing run with counts",
+      "text": "TestSprite: 11 passed, 3 failed. See the run summary for details.",
+      "expect": [{ "status": "failed", "passed": 11, "failed": 3 }]
+    },
+    {
+      "name": "passing ratio",
+      "text": "TestSprite report: 14/14 passed.",
+      "expect": [{ "status": "passed", "passed": 14, "failed": 0 }]
+    },
+    {
+      "name": "labeled counts",
+      "text": "TestSprite run complete. Passed: 8, Failed: 2",
+      "expect": [{ "status": "failed", "passed": 8, "failed": 2 }]
+    },
+    {
+      "name": "passed without counts",
+      "text": "TestSprite: all tests passed.",
+      "expect": [{ "status": "passed", "passed": null, "failed": null }]
+    },
+    {
+      "name": "in progress",
+      "text": "TestSprite is running the test suite for this pull request.",
+      "expect": [{ "status": "in_progress", "passed": null, "failed": null }]
+    },
+    {
+      "name": "failure without counts",
+      "text": "TestSprite: the test suite failed.",
+      "expect": [{ "status": "failed", "passed": null, "failed": null }]
+    },
+    {
+      "name": "unrecognized wording",
+      "text": "Verification for this change is available in the TestSprite workspace.",
+      "expect": [
+        {
+          "status": "unknown",
+          "passed": null,
+          "failed": null,
+          "raw": "Verification for this change is available in the TestSprite workspace."
+        }
+      ]
+    },
+    {
+      "name": "empty body",
+      "text": "",
+      "expect": []
+    }
+  ]
+}
