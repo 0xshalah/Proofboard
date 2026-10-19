@@ -178,6 +178,7 @@ All responses are `application/json` except the badge, which is `image/svg+xml`.
 - 400 `{ "error": "invalid_url" }` when the input is not a GitHub repository reference.
 - 404 `{ "error": "not_found" }` when GitHub reports the repository missing.
 - 429 `{ "error": "rate_limited", "resetAt": "ISO 8601 | null" }` when the hourly limit is reached and no cached response exists.
+- 502 `{ "error": "upstream" }` when GitHub fails in an unexpected way.
 
 ### GET /api/badge/{owner}/{repo}
 - 200 with the SVG in one of four states: `passing`, `failing`, `no runs`, `unknown`.
@@ -185,7 +186,7 @@ All responses are `application/json` except the badge, which is `image/svg+xml`.
 - Header: `Cache-Control: public, max-age=300, stale-while-revalidate=86400`.
 
 ### POST /api/parse
-- Body: `{ "text": "comment body" }`
+- Body: `{ "text": "comment body", "createdAt": "ISO 8601 (optional, pins the run timestamps)" }`
 - 200 `{ "runs": [ ... ] }`
 - 400 `{ "error": "invalid_body" }` when text is missing or not a string.
 
